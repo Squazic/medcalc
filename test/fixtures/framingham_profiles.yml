@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  male: false
+  age: 1
+  sbp: 1
+  treatment: false
+  smoker: false
+  diabetes: false
+  bmi: 1.5
+
+two:
+  male: false
+  age: 1
+  sbp: 1
+  treatment: false
+  smoker: false
+  diabetes: false
+  bmi: 1.5

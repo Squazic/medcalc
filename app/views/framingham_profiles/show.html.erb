@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Male:</b>
+  <%= @framingham_profile.male %>
+</p>
+
+<p>
+  <b>Age:</b>
+  <%= @framingham_profile.age %>
+</p>
+
+<p>
+  <b>Sbp:</b>
+  <%= @framingham_profile.sbp %>
+</p>
+
+<p>
+  <b>Treatment:</b>
+  <%= @framingham_profile.treatment %>
+</p>
+
+<p>
+  <b>Smoker:</b>
+  <%= @framingham_profile.smoker %>
+</p>
+
+<p>
+  <b>Diabetes:</b>
+  <%= @framingham_profile.diabetes %>
+</p>
+
+<p>
+  <b>Bmi:</b>
+  <%= @framingham_profile.bmi %>
+</p>
+
+
+<%= link_to 'Edit', edit_framingham_profile_path(@framingham_profile) %> |
+<%= link_to 'Back', framingham_profiles_path %>

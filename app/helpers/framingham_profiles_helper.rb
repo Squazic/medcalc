@@ -1,0 +1,2 @@
+module FraminghamProfilesHelper
+end

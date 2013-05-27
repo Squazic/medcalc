@@ -1,0 +1,45 @@
+<%= form_for(@framingham_profile) do |f| %>
+  <% if @framingham_profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@framingham_profile.errors.count, "error") %> prohibited this framingham_profile from being saved:</h2>
+
+      <ul>
+      <% @framingham_profile.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :male %><br />
+    <%= f.check_box :male %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br />
+    <%= f.number_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :sbp %><br />
+    <%= f.number_field :sbp %>
+  </div>
+  <div class="field">
+    <%= f.label :treatment %><br />
+    <%= f.check_box :treatment %>
+  </div>
+  <div class="field">
+    <%= f.label :smoker %><br />
+    <%= f.check_box :smoker %>
+  </div>
+  <div class="field">
+    <%= f.label :diabetes %><br />
+    <%= f.check_box :diabetes %>
+  </div>
+  <div class="field">
+    <%= f.label :bmi %><br />
+    <%= f.text_field :bmi %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,35 @@
+<h1>Listing framingham_profiles</h1>
+
+<table>
+  <tr>
+    <th>Male</th>
+    <th>Age</th>
+    <th>Sbp</th>
+    <th>Treatment</th>
+    <th>Smoker</th>
+    <th>Diabetes</th>
+    <th>Bmi</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @framingham_profiles.each do |framingham_profile| %>
+  <tr>
+    <td><%= framingham_profile.male %></td>
+    <td><%= framingham_profile.age %></td>
+    <td><%= framingham_profile.sbp %></td>
+    <td><%= framingham_profile.treatment %></td>
+    <td><%= framingham_profile.smoker %></td>
+    <td><%= framingham_profile.diabetes %></td>
+    <td><%= framingham_profile.bmi %></td>
+    <td><%= link_to 'Show', framingham_profile %></td>
+    <td><%= link_to 'Edit', edit_framingham_profile_path(framingham_profile) %></td>
+    <td><%= link_to 'Destroy', framingham_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Framingham profile', new_framingham_profile_path %>

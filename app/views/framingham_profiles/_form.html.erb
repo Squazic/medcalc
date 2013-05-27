@@ -12,19 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :male %><br />
+    <%= f.label :male, "Male?" %><br />
     <%= f.check_box :male %>
   </div>
   <div class="field">
-    <%= f.label :age %><br />
+    <%= f.label :age, "Age (years)" %><br />
     <%= f.number_field :age %>
   </div>
   <div class="field">
-    <%= f.label :sbp %><br />
+    <%= f.label :sbp, "Systolic Blood Pressure (mmHg)" %><br />
     <%= f.number_field :sbp %>
   </div>
   <div class="field">
-    <%= f.label :treatment %><br />
+    <%= f.label :treatment, "Treatment for Hypertension" %><br />
     <%= f.check_box :treatment %>
   </div>
   <div class="field">
@@ -36,10 +36,10 @@
     <%= f.check_box :diabetes %>
   </div>
   <div class="field">
-    <%= f.label :bmi %><br />
+    <%= f.label :bmi, "Body Mass Index" %><br />
     <%= f.text_field :bmi %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Calculate"%>
   </div>
 <% end %>

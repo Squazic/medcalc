@@ -1,14 +1,15 @@
-<h1>Listing framingham_profiles</h1>
+<h1>Framingham Profile List</h1>
 
 <table>
   <tr>
     <th>Male</th>
     <th>Age</th>
-    <th>Sbp</th>
-    <th>Treatment</th>
+    <th>Systolic Blood Pressure (mmHg)</th>
+    <th>Treatment for hypertension</th>
     <th>Smoker</th>
     <th>Diabetes</th>
-    <th>Bmi</th>
+    <th>BMI</th>
+    <th>Risk</th>
     <th></th>
     <th></th>
     <th></th>
@@ -23,6 +24,7 @@
     <td><%= framingham_profile.smoker %></td>
     <td><%= framingham_profile.diabetes %></td>
     <td><%= framingham_profile.bmi %></td>
+    <td><%= calculate_risk(framingham_profile) %></td>
     <td><%= link_to 'Show', framingham_profile %></td>
     <td><%= link_to 'Edit', edit_framingham_profile_path(framingham_profile) %></td>
     <td><%= link_to 'Destroy', framingham_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>

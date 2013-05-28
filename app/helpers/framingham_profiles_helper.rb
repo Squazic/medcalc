@@ -40,6 +40,6 @@ module FraminghamProfilesHelper
     # Rest of math
     exp = Math.exp(sum - constants[:subtract])
     result = 1 - constants[:exp_base] ** exp
-    result_pct = number_to_percentage(result * 100)
+    result_pct = number_to_percentage(result * 100, :precision => 1)
   end
 end

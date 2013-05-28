@@ -1,4 +1,7 @@
 class FraminghamProfilesController < ApplicationController
+
+ http_basic_authenticate_with :name => "admin", :password => "password", :except => [:new, :show]
+
   # GET /framingham_profiles
   # GET /framingham_profiles.json
   def index

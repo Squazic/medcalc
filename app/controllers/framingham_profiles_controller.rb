@@ -1,6 +1,6 @@
 class FraminghamProfilesController < ApplicationController
 
- http_basic_authenticate_with :name => "admin", :password => "password", :except => [:new, :show]
+  http_basic_authenticate_with :name => "admin", :password => "password", :except => [:new, :show, :create]
 
   # GET /framingham_profiles
   # GET /framingham_profiles.json

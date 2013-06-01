@@ -21,6 +21,9 @@ module FraminghamProfilesHelper
                    :subtract => 26.0145}
     end
 
+    # Get BMI
+    bmi = calculate_bmi(profile)
+
     # Result of sigma
     sum = 0
     if profile.treatment
@@ -29,7 +32,7 @@ module FraminghamProfilesHelper
       sum += constants[:sbp] * Math.log(profile.sbp)
     end
     sum += Math.log(profile.age) * constants[:age]
-    sum += Math.log(profile.bmi) * constants[:bmi]
+    sum += Math.log(bmi) * constants[:bmi]
 
     # Create ints for smoker/diabetes
     smoker = (profile.smoker ? 1 : 0)
@@ -41,5 +44,11 @@ module FraminghamProfilesHelper
     exp = Math.exp(sum - constants[:subtract])
     result = 1 - constants[:exp_base] ** exp
     result_pct = number_to_percentage(result * 100, :precision => 1)
+  end
+
+  def calculate_bmi(profile)
+    meters = profile.height / 100.0
+    bmi = profile.weight / (meters ** 2)
+    bmi = bmi.round(1)
   end
 end

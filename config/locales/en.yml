@@ -9,3 +9,4 @@ en:
         sbp: "Systolic Blood Pressure (mmHg)"
         height: "Height (cm)"
         weight: "Weight (kg)"
+        treatment: "Treatment for hypertenstion"

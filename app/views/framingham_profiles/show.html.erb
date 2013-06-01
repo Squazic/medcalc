@@ -16,8 +16,12 @@
   <dd><%= @framingham_profile.smoker %></dd>
   <dt><strong><%= model_class.human_attribute_name(:diabetes) %>:</strong></dt>
   <dd><%= @framingham_profile.diabetes %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:bmi) %>:</strong></dt>
-  <dd><%= @framingham_profile.bmi %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:height) %>:</strong></dt>
+  <dd><%= @framingham_profile.height %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:weight) %>:</strong></dt>
+  <dd><%= @framingham_profile.weight %></dd>
+  <dt><strong>BMI:</strong></dt>
+  <dd><%= calculate_bmi(@framingham_profile) %></dd>
   <dt><strong>Risk:</strong></dt>
   <dd><%= calculate_risk(@framingham_profile) %></dd>
 </dl>

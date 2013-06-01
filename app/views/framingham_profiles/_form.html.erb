@@ -1,5 +1,5 @@
 <%= simple_form_for @framingham_profile, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :male, label: "Gender", :collection => ["Male", "Female"], as: :radio_buttons %>
+  <%= f.input :male, label: "Gender", :collection => [[ t("Male"), true ], [ t("Female"), false ]], as: :radio_buttons %>
   <%= f.input :age, :class => 'number_field' %>
   <%= f.input :sbp, :class => 'number_field', label: "Systolic Blood Pressure
     (mmHg)", :class => 'control-label' %>

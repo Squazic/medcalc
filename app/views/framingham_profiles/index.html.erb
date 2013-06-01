@@ -14,6 +14,7 @@
       <th><%= model_class.human_attribute_name(:diabetes) %></th>
       <th><%= model_class.human_attribute_name(:bmi) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th>Risk</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -29,6 +30,7 @@
         <td><%= framingham_profile.diabetes %></td>
         <td><%= framingham_profile.bmi %></td>
         <td><%=l framingham_profile.created_at %></td>
+        <td><%= calculate_risk(framingham_profile) %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_framingham_profile_path(framingham_profile), :class => 'btn btn-mini' %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130527221927) do
+ActiveRecord::Schema.define(:version => 20130601031559) do
 
   create_table "framingham_profiles", :force => true do |t|
     t.boolean  "male"
@@ -20,9 +20,10 @@ ActiveRecord::Schema.define(:version => 20130527221927) do
     t.boolean  "treatment"
     t.boolean  "smoker"
     t.boolean  "diabetes"
-    t.float    "bmi"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.float    "height"
+    t.float    "weight"
   end
 
 end

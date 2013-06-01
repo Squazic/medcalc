@@ -12,8 +12,10 @@
       <th><%= model_class.human_attribute_name(:treatment) %></th>
       <th><%= model_class.human_attribute_name(:smoker) %></th>
       <th><%= model_class.human_attribute_name(:diabetes) %></th>
-      <th><%= model_class.human_attribute_name(:bmi) %></th>
+      <th><%= model_class.human_attribute_name(:height) %></th>
+      <th><%= model_class.human_attribute_name(:weight) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th>BMI</th>
       <th>Risk</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -28,8 +30,10 @@
         <td><%= framingham_profile.treatment %></td>
         <td><%= framingham_profile.smoker %></td>
         <td><%= framingham_profile.diabetes %></td>
-        <td><%= framingham_profile.bmi %></td>
+        <td><%= framingham_profile.height %></td>
+        <td><%= framingham_profile.weight %></td>
         <td><%=l framingham_profile.created_at %></td>
+        <td><%= calculate_bmi(framingham_profile) %></td>
         <td><%= calculate_risk(framingham_profile) %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

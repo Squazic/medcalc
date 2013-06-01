@@ -1,5 +1,5 @@
 <%= simple_form_for @framingham_profile, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :male, label: "Gender", :collection => ["Male", "Female"], as: :radio_buttons %>
+  <%= f.input :male, label: "Gender", :collection => [[ t("Male"), true ], [ t("Female"), false ]], as: :radio_buttons %>
   <%= f.input :age, :class => 'number_field' %>
   <%= f.input :sbp, :class => 'number_field', label: "Systolic Blood Pressure
     (mmHg)", :class => 'control-label' %>
@@ -7,7 +7,10 @@
     hypertension?", :class => 'check_box', as: :radio_buttons %>
   <%= f.input :smoker, label: "Do you smoke?", :class => 'check_box', as: :radio_buttons %>
   <%= f.input :diabetes, label: "Do you suffer from diabetes?", :class => 'check_box', as: :radio_buttons %>
-  <%= f.input :bmi, :class => 'text_field' %>
+  <%= f.input :height, :class => 'number_field' %>
+  <%= f.input :height_units, label: "", :collection => ["in", "cm"], as: :radio_buttons %>
+  <%= f.input :weight, :class => 'number_field' %>
+  <%= f.input :weight_units, label: "", :collection => ["lb", "kg"], as: :radio_buttons %>
 
   <div class="form-actions">
     <%= f.submit "Submit", :class => 'btn btn-primary' %>

@@ -1,49 +1,16 @@
-<%= form_for @framingham_profile, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :male, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.check_box :male, :class => 'check_box' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :age, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :age, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :sbp, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :sbp, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :treatment, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.check_box :treatment, :class => 'check_box' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :smoker, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.check_box :smoker, :class => 'check_box' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :diabetes, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.check_box :diabetes, :class => 'check_box' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :bmi, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :bmi, :class => 'text_field' %>
-    </div>
-  </div>
+<%= simple_form_for @framingham_profile, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :male, label: "Gender", :collection => ["Male", "Female"], as: :radio_buttons %>
+  <%= f.input :age, :class => 'number_field' %>
+  <%= f.input :sbp, :class => 'number_field', label: "Systolic Blood Pressure
+    (mmHg)", :class => 'control-label' %>
+  <%= f.input :treatment, label: "Are you undergoing treatment for
+    hypertension?", :class => 'check_box', as: :radio_buttons %>
+  <%= f.input :smoker, label: "Do you smoke?", :class => 'check_box', as: :radio_buttons %>
+  <%= f.input :diabetes, label: "Do you suffer from diabetes?", :class => 'check_box', as: :radio_buttons %>
+  <%= f.input :bmi, :class => 'text_field' %>
 
   <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= f.submit "Submit", :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 framingham_profiles_path, :class => 'btn' %>
   </div>

@@ -1,5 +1,9 @@
 <%- model_class = FraminghamProfile -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human %></h1>
+  <h1>CVD Risk</h1>
+  <p>Do you have a 10-year risk of cardiovascular disease?</p>
+  <p>Answer the questions below to find out</p>
+  <p>Results are computed using data from the <%= link_to "Framingham Heart
+  Study", "http://www.framinghamheartstudy.org/", target: "_blank" %></p>
 </div>
 <%= render :partial => 'form' %>

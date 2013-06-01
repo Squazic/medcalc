@@ -8,11 +8,12 @@
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:male) %></th>
       <th><%= model_class.human_attribute_name(:age) %></th>
-      <th><%= model_class.human_attribute_name(:sbp) %></th>
+      <th>Systolic Blood Pressure (mmHg)</th>
       <th><%= model_class.human_attribute_name(:treatment) %></th>
       <th><%= model_class.human_attribute_name(:smoker) %></th>
       <th><%= model_class.human_attribute_name(:diabetes) %></th>
-      <th><%= model_class.human_attribute_name(:bmi) %></th>
+      <th><%= model_class.human_attribute_name(:height) %>(cm)</th>
+      <th><%= model_class.human_attribute_name(:weight) %>(kg)</th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th>Risk</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -28,7 +29,8 @@
         <td><%= framingham_profile.treatment %></td>
         <td><%= framingham_profile.smoker %></td>
         <td><%= framingham_profile.diabetes %></td>
-        <td><%= framingham_profile.bmi %></td>
+        <td><%= framingham_profile.height %></td>
+        <td><%= framingham_profile.weight %></td>
         <td><%=l framingham_profile.created_at %></td>
         <td><%= calculate_risk(framingham_profile) %></td>
         <td>

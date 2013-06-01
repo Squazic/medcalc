@@ -7,7 +7,8 @@
     hypertension?", :class => 'check_box', as: :radio_buttons %>
   <%= f.input :smoker, label: "Do you smoke?", :class => 'check_box', as: :radio_buttons %>
   <%= f.input :diabetes, label: "Do you suffer from diabetes?", :class => 'check_box', as: :radio_buttons %>
-  <%= f.input :bmi, :class => 'text_field' %>
+  <%= f.input :height, :class => 'number_field' %>
+  <%= f.input :weight, :class => 'number_field' %>
 
   <div class="form-actions">
     <%= f.submit "Submit", :class => 'btn btn-primary' %>

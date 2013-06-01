@@ -3,3 +3,9 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    attributes:
+      framingham_profile:
+        sbp: "Systolic Blood Pressure (mmHg)"
+        height: "Height (cm)"
+        weight: "Weight (kg)"

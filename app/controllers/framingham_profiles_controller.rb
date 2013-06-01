@@ -47,7 +47,7 @@ class FraminghamProfilesController < ApplicationController
 
     respond_to do |format|
       if @framingham_profile.save
-        format.html { redirect_to @framingham_profile, notice: 'Framingham profile was successfully created.' }
+        format.html { redirect_to @framingham_profile, notice: 'Congrats on filling out the form! See your results below.' }
         format.json { render json: @framingham_profile, status: :created, location: @framingham_profile }
       else
         format.html { render action: "new" }

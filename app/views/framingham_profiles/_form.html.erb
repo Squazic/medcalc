@@ -1,45 +1,50 @@
-<%= form_for(@framingham_profile) do |f| %>
-  <% if @framingham_profile.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@framingham_profile.errors.count, "error") %> prohibited this framingham_profile from being saved:</h2>
-
-      <ul>
-      <% @framingham_profile.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @framingham_profile, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :male, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :male, :class => 'check_box' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :age, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :age, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :sbp, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :sbp, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :treatment, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :treatment, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :smoker, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :smoker, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :diabetes, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :diabetes, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :bmi, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :bmi, :class => 'text_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :male, "Male?" %><br />
-    <%= f.check_box :male %>
-  </div>
-  <div class="field">
-    <%= f.label :age, "Age (years)" %><br />
-    <%= f.number_field :age %>
-  </div>
-  <div class="field">
-    <%= f.label :sbp, "Systolic Blood Pressure (mmHg)" %><br />
-    <%= f.number_field :sbp %>
-  </div>
-  <div class="field">
-    <%= f.label :treatment, "Treatment for Hypertension" %><br />
-    <%= f.check_box :treatment %>
-  </div>
-  <div class="field">
-    <%= f.label :smoker %><br />
-    <%= f.check_box :smoker %>
-  </div>
-  <div class="field">
-    <%= f.label :diabetes %><br />
-    <%= f.check_box :diabetes %>
-  </div>
-  <div class="field">
-    <%= f.label :bmi, "Body Mass Index" %><br />
-    <%= f.text_field :bmi %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Calculate"%>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                framingham_profiles_path, :class => 'btn' %>
   </div>
 <% end %>

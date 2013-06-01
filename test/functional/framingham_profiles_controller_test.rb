@@ -19,7 +19,7 @@ class FraminghamProfilesControllerTest < ActionController::TestCase
 
   test "should create framingham_profile" do
     assert_difference('FraminghamProfile.count') do
-      post :create, framingham_profile: { age: @framingham_profile.age, bmi: @framingham_profile.bmi, diabetes: @framingham_profile.diabetes, male: @framingham_profile.male, sbp: @framingham_profile.sbp, smoker: @framingham_profile.smoker, treatment: @framingham_profile.treatment }
+      post :create, framingham_profile: { age: @framingham_profile.age, height: @framingham_profile.height, height_units: "in", weight: @framingham_profile.weight, weight_units: "lb", diabetes: @framingham_profile.diabetes, male: @framingham_profile.male, sbp: @framingham_profile.sbp, smoker: @framingham_profile.smoker, treatment: @framingham_profile.treatment }
     end
 
     assert_redirected_to framingham_profile_path(assigns(:framingham_profile))
@@ -38,7 +38,7 @@ class FraminghamProfilesControllerTest < ActionController::TestCase
 
   test "should update framingham_profile" do
     @request.env['HTTP_AUTHORIZATION'] = ActionController::HttpAuthentication::Basic.encode_credentials('admin', 'password')
-    put :update, id: @framingham_profile, framingham_profile: { age: @framingham_profile.age, bmi: @framingham_profile.bmi, diabetes: @framingham_profile.diabetes, male: @framingham_profile.male, sbp: @framingham_profile.sbp, smoker: @framingham_profile.smoker, treatment: @framingham_profile.treatment }
+    put :update, id: @framingham_profile, framingham_profile: { age: @framingham_profile.age, height: @framingham_profile.height, height_units: "in", weight: @framingham_profile.weight, weight_units: "lb", diabetes: @framingham_profile.diabetes, male: @framingham_profile.male, sbp: @framingham_profile.sbp, smoker: @framingham_profile.smoker, treatment: @framingham_profile.treatment }
     assert_redirected_to framingham_profile_path(assigns(:framingham_profile))
   end
 
